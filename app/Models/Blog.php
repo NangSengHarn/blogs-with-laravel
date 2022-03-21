@@ -27,15 +27,19 @@ class Blog
                 return new Blog($obj->title,$obj->slug,$obj->intro,$obj->body(),$obj->date);
             })
             ->sortByDesc('date');
-        // return array_map(function ($files){
-        //     $obj=YamlFrontMatter::parseFile($file);
-        //     return new Blog($obj->title,$obj->slug,$obj->intro,$obj->body());
-        // },files); 
     }
     public static function find($slug)
     {
         $blogs=static::all();
         return $blogs->firstWhere('slug',$slug);
     }
-
+    public static function findOrFail($slug)
+    {
+        $blog=static::find($slug);
+        if(!$blog){
+            // throw new ModelNotFoundException();
+            abort(404);
+        }
+        return $blog;
+    }
 }
