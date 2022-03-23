@@ -4,7 +4,7 @@
   </x-slot>
     @foreach($blogs as $blog)
       <div>
-          <h1><a href="blogs/{{$blog->id}}">{{$blog->title}}</a></h1>
+          <h1><a href="blogs/{{$blog->slug}}">{{$blog->title}}</a></h1>
           <div>
               <p>published at - {{$blog->created_at->diffForHumans()}}</p>
               <p>{{$blog->intro}}</p>
