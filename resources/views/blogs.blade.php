@@ -6,7 +6,7 @@
       <div>
           <h1><a href="blogs/{{$blog->slug}}">{{$blog->title}}</a></h1>
           <p>
-            <a href="">
+            <a href="categories/{{$blog->category->slug}}">
               {{$blog->category->name}}
             </a>
           </p>
