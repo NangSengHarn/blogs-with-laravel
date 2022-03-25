@@ -1,7 +1,4 @@
-<x-layout>
-  <x-slot name="title">
-    <title>All Blogs</title>
-  </x-slot>
+<!-- 
     @foreach($blogs as $blog)
       <div>
           <h1><a href="blogs/{{$blog->slug}}">{{$blog->title}}</a></h1>
@@ -17,5 +14,15 @@
           </div>
       </div>  
     @endforeach
-</x-layout>
+ -->
+
+<x-layout>
+  <x-slot name="title">
+    <title>All Blogs</title>
+  </x-slot>
+  <x-hero />
+  <x-blogs-section/>
+  <x-subscribe/>
+    
+</x-layout>    
 
