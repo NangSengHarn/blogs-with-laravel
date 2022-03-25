@@ -1,3 +1,4 @@
+@props(['blogs'])
 <section class="container text-center" id="blogs">
       <h1 class="display-5 fw-bold mb-4">Blogs</h1>
       <div class="">
@@ -26,23 +27,10 @@
         </div>
       </form>
       <div class="row">
+        @foreach ($blogs as $blog)
         <div class="col-md-4 mb-4">
-          <x-blogcard/>
+          <x-blogcard :blog="$blog" />
         </div>
-        <div class="col-md-4 mb-4">
-          <x-blogcard/>
-        </div>
-        <div class="col-md-4 mb-4">
-          <x-blogcard/>
-        </div>
-        <div class="col-md-4 mb-4">
-          <x-blogcard/>
-        </div>
-        <div class="col-md-4 mb-4">
-          <x-blogcard/>
-        </div>
-        <div class="col-md-4 mb-4">
-          <x-blogcard/>
-        </div>
+        @endforeach
       </div>
     </section>
