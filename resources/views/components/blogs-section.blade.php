@@ -22,7 +22,9 @@
       <form action="" class="my-3">
         <div class="input-group mb-3">
           <input
+            name="search"
             type="text"
+            value="{{request('search')}}"
             autocomplete="false"
             class="form-control"
             placeholder="Search Blogs..."
@@ -37,10 +39,12 @@
         </div>
       </form>
       <div class="row">
-        @foreach ($blogs as $blog)
+        @forelse ($blogs as $blog)
         <div class="col-md-4 mb-4">
           <x-blogcard :blog="$blog" />
         </div>
-        @endforeach
+        @empty
+        <p class="text-center">No Blogs Found</p>
+        @endforelse
       </div>
     </section>
