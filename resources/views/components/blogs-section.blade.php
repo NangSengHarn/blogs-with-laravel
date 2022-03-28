@@ -9,7 +9,7 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             @foreach ($categories as $category)
             <li>
-              <a class="dropdown-item" href="/categories/{{$category->slug}}">{{$category->name}}</a>
+              <a class="dropdown-item" href="/?category={{$category->slug}}">{{$category->name}}</a>
             </li>
             @endforeach
           </ul>
