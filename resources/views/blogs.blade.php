@@ -4,9 +4,7 @@
   </x-slot>
   <x-hero />
   <x-blogs-section 
-  :blogs="$blogs" 
-  :categories="$categories"
-  :currentCategory="$currentCategory??null"/>
+  :blogs="$blogs" />
   <x-subscribe/>
     
 </x-layout>    

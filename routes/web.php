@@ -14,8 +14,7 @@ Route::get('/blogs/{blog:slug}', [BlogController::class,'show'])->where('blog','
 
 Route::get('/users/{user:username}',function(User $user){
     return view('blogs',[
-        'blogs'=>$user->blogs,
-        'categories'=>Category::all()
+        'blogs'=>$user->blogs
     ]);
 
 });
