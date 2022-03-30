@@ -10,6 +10,20 @@
       </div>
       <form action="" class="my-3">
         <div class="input-group mb-3">
+          @if(request('category'))
+          <input
+            name="category"
+            type="hidden"
+            value="{{request('category')}}"
+          />
+          @endif
+          @if(request('username'))
+          <input
+            name="username"
+            type="hidden"
+            value="{{request('username')}}"
+          />
+          @endif
           <input
             name="search"
             type="text"
