@@ -20,7 +20,7 @@ class AuthController extends Controller
         ]);
         $user=User::create($formData);
         //login
-        auth()->login($user); 
+        auth()->login($user);
 
         return redirect('/')->with('success','Welcome dear, '.$user->name);
     }
@@ -39,7 +39,14 @@ class AuthController extends Controller
             'password'=>['required','min:8','max:255']
         ]);
         //auth attempt
+        if(auth()->attempt($formData)){
         //if uset credentials correct -> redirect home
-        //if user credentials fail -> redirect back ti form with error
+            return redirect('/')->with('success','Welcome back');
+        }else{
+        //if user credentials fail -> redirect back to form with error
+            return redirect()->back()->withErrors([
+                'email'=>'User Credentials wrong'
+            ]);
+        }
     }
 }
