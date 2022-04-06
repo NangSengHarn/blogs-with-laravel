@@ -1,3 +1,5 @@
+@props(['comment'])
+
 <div class="card d-flex p-3 my-3 shadow-sm">
     <div class="d-flex">
         <div>
@@ -8,11 +10,11 @@
                  alt="">
         </div>
         <div class="ms-3">
-            <h6>Sunnie</h6>
-            <p class="text-secondary">3 weeks ago</p>
+            <h6>{{$comment->author->name}}</h6>
+            <p class="text-secondary">{{$comment->created_at->diffForHumans()}}</p>
         </div>
     </div>
     <p class="mt-1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta labore molestias nihil a culpa ipsam libero fugit nemo?
+        {{$comment->body}}
     </p>
 </div>

@@ -9,7 +9,7 @@ class Blog extends Model
 {
     use HasFactory;
     protected $guarded=['id'];
-    protected $with=['category','author'];
+    protected $with=['category','author','comments'];
 
     public function scopeFilter($query,$filter)
     {
@@ -37,5 +37,9 @@ class Blog extends Model
     public function author()
     {
         return $this->belongsTo(User::class,'user_id');
+    }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
