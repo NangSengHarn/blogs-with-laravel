@@ -33,7 +33,8 @@
         </div>
     </section>
     @if ($blog->comments->count())
-    <x-comments :comments="$blog->comments"/>
+    <x-comments :paginatedcomments="$blog->comments()->latest()->paginate(3)"
+                :allcomments="$blog->comments" />
     @endif
     <x-subscribe/>
     
