@@ -17,7 +17,8 @@
               <div class="text-secondary">{{$blog->created_at->diffForHumans()}}</div>
               <div class="text-secondary">
                 @auth
-                <form action="" method="POST">
+                <form action="/blogs/{{$blog->slug}}/subscription" method="POST">
+                  @csrf
                   @if (auth()->user()->isSubscribed($blog))
                   <button class="btn btn-danger">unsubscribe</button>
                   @else
