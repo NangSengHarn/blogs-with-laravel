@@ -15,6 +15,17 @@
               <div>Author - <a href="/users/{{$blog->author->username}}">{{$blog->author->name}}</a></div>
               <div><a href="/categories/{{$blog->category->slug}}"><span class="badge bg-primary">{{$blog->category->name}}</span></a></div>
               <div class="text-secondary">{{$blog->created_at->diffForHumans()}}</div>
+              <div class="text-secondary">
+                @auth
+                <form action="" method="POST">
+                  @if (auth()->user()->isSubscribed($blog))
+                  <button class="btn btn-danger">unsubscribe</button>
+                  @else
+                  <button class="btn btn-warning">subscribe</button>
+                  @endif
+                </form>
+                @endauth
+              </div>
           </div>
           <p class="lh-md mt-3">
             {{$blog->body}}
@@ -36,7 +47,6 @@
     <x-comments :paginatedcomments="$blog->comments()->latest()->paginate(3)"
                 :allcomments="$blog->comments" />
     @endif
-    <x-subscribe/>
     
     <x-blogs-you-may-like :randomBlogs="$randomBlogs"/>
     </div>
