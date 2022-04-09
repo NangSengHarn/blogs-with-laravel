@@ -1,7 +1,6 @@
-<x-layout>
+<x-admin-layout>
 
     <h3 class="my-3 text-center">Blog create form</h3>
-    <div class="col-md-8 mx-auto">
         <x-card-wrapper>
             <form enctype="multipart/form-data" action="/admin/blogs/store" method="POST">
                 @csrf
@@ -24,5 +23,4 @@
                 </div>
             </form>
         </x-card-wrapper>
-    </div>
-</x-layout>
+</x-admin-layout>

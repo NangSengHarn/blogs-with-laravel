@@ -27,7 +27,7 @@ class AuthController extends Controller
     public function logout(){
         auth()->logout();
 
-        return redirect('/')->with('success','Good bye'); 
+        return redirect('/')->with('success','Good bye');
     }
     public function login(){
         return view('auth.login');
@@ -40,8 +40,15 @@ class AuthController extends Controller
         ]);
         //auth attempt
         if(auth()->attempt($formData)){
-        //if uset credentials correct -> redirect home
-            return redirect('/')->with('success','Welcome back');
+        //if user credentials correct -> redirect home
+            if(auth()->user()->is_admin){
+                //if user is admin -> redirect admin dashboard
+                return redirect('/admin/blogs');
+            } else {
+                //if user is not admin -> redirect home
+                return redirect('/')->with('success','Welcome back');
+            }
+
         }else{
         //if user credentials fail -> redirect back to form with error
             return redirect()->back()->withErrors([
