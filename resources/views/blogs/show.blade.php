@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="title">
-        <title>{{$blog->title}}</title>
+        {{$blog->title}}
     </x-slot>
     <div class="container">
       <div class="row">
@@ -38,7 +38,7 @@
     <section class="container">
         <div class="col-md-8 mx-auto">
           @auth
-          <x-comment-form :blog="$blog"/> 
+          <x-comment-form :blog="$blog"/>
           @else
           <p class="text-center">Please <a href="/login">login</a> to participate in this discussion.</p>
           @endauth
@@ -48,7 +48,7 @@
     <x-comments :paginatedcomments="$blog->comments()->latest()->paginate(3)"
                 :allcomments="$blog->comments" />
     @endif
-    
+
     <x-blogs-you-may-like :randomBlogs="$randomBlogs"/>
     </div>
 </x-layout>

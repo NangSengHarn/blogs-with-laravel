@@ -1,6 +1,6 @@
 <x-layout>
   <x-slot name="title">
-    <title>All Blogs</title>
+    All Blogs
   </x-slot>
   @if (session('success'))
   <div class="alert alert-success text-center">
@@ -8,9 +8,8 @@
   </div>
   @endif
   <x-hero />
-  <x-blogs-section 
+  <x-blogs-section
   :blogs="$blogs" />
-  <x-subscribe/>
-    
-</x-layout>    
+
+</x-layout>
 

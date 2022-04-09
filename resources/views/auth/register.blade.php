@@ -1,6 +1,6 @@
 <x-layout>
   <x-slot name="title">
-    <title>Register</title>
+    Register
   </x-slot>
   <div class="container">
       <div class="row">
@@ -11,11 +11,11 @@
                 @csrf
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input  
+                <input
                     required
-                    type="text" 
-                    class="form-control" 
-                    id="exampleInputEmail1" 
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     name="name"
                     value="{{old('name')}}">
@@ -23,11 +23,11 @@
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                <input  
+                <input
                     required
-                    type="text" 
-                    class="form-control" 
-                    id="exampleInputEmail1" 
+                    type="text"
+                    class="form-control"
+                    id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     name="username"
                     value="{{old('username')}}" >
@@ -35,11 +35,11 @@
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input 
-                    required 
-                    type="email" 
-                    class="form-control" 
-                    id="exampleInputEmail1" 
+                <input
+                    required
+                    type="email"
+                    class="form-control"
+                    id="exampleInputEmail1"
                     aria-describedby="emailHelp"
                     name="email"
                     value="{{old('email')}}">
@@ -47,10 +47,10 @@
               </div>
               <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input  
+                <input
                     required
-                    type="password" 
-                    class="form-control" 
+                    type="password"
+                    class="form-control"
                     id="exampleInputPassword1"
                     name="password">
                   <x-error name='password'/>

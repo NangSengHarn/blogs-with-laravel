@@ -9,7 +9,7 @@ use App\Models\User;
 class BlogController extends Controller
 {
     public function index(){
-        
+
         return view('blogs.index',[
             'blogs'=>Blog::latest()->filter(request(['search','category','username']))->paginate(6)->withQueryString()
         ]);
@@ -21,11 +21,17 @@ class BlogController extends Controller
         ]);
     }
     public function subscriptionHandler(Blog $blog){
-        if(auth()->user()->isSubscribed($blog)){
+        if(User::find(auth()->id())->isSubscribed($blog)){
             $blog->unSubscribe();
         } else {
             $blog->subscribe();
         }
         return back();
+    }
+    public function create()
+    {
+
+
+        return view('blogs.create');
     }
 }

@@ -8,7 +8,7 @@
           <a href="/" class="nav-link">Welcome {{auth()->user()->name}}</a>
           <form action="/logout" method="POST">
             @csrf
-            <button 
+            <button
             class="nav-link btn btn-link"
             type="submit">
               Log out
@@ -18,7 +18,7 @@
           <a href="/register" class="nav-link">Register</a>
           <a href="/login" class="nav-link">Log in</a>
           @endauth
-          <a href="#subscribe" class="nav-link">Subscribe</a>
+          <a href="" class="nav-link">Subscribe</a>
         </div>
       </div>
     </nav>
